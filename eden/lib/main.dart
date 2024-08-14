@@ -1,6 +1,5 @@
 import 'package:eden/pages/home_page.dart';
 import 'package:eden/themes/dark_mode.dart';
-import 'package:eden/themes/light_mode.dart';
 import 'package:flutter/material.dart';
 
 void main() {
