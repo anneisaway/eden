@@ -1,10 +1,17 @@
 import 'package:eden/pages/home_page.dart';
 import 'package:eden/themes/dark_mode.dart';
 import 'package:eden/themes/light_mode.dart';
+import 'package:eden/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
@@ -14,8 +21,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homepage(),
-      theme: lightMode,
+      home: const Homepage(),
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }

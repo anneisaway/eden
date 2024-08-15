@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:eden/components/my_drawer.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -12,6 +13,8 @@ class _HomePageState extends State<Homepage>{
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: AppBar(title: Text("P L A Y L I S T")),
+      drawer: MyDrawer(),
     );
   }
 }
